@@ -1,0 +1,11 @@
+{
+  "name": "tt_babel",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "meox <glmeocci@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "^6.24.1",
+    "lodash": "^4.17.4"
+  }
+}
