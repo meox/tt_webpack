@@ -22,3 +22,20 @@ yarn upgrade
 Under the **src** directory put all your *Plugins*, you should have something like this:
 ![image-folder](https://cloud.githubusercontent.com/assets/852548/25313524/50709ac2-2830-11e7-954c-1fde475afc13.png)
 
+Under the *src* directory you can put other directories (like common) and other js libraries or file that contains you code.
+
+## How to include a JS file into onother
+Consider the *hello_world.js* plugin. At the beginning it look likes:
+```
+import * as common_voice from './common/voice'
+```
+
+As you can see it include (using **import** directive from ES2015) the module *voice* that is located under *common* folder.
+If you open common/voice.js:
+```
+export function loadEnumeResolver(obj, tkt)
+{
+...
+}
+```
+The important part is that every function that you would like to export should be preceded by **export** keyword.
