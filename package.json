@@ -5,7 +5,22 @@
   "author": "meox <glmeocci@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
-    "lodash": "^4.17.4"
+    "babel-loader": "^7.0.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-es2015": "^6.24.1",
+    "lodash": "^4.17.4",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.3"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "scripts": {
+    "build": "webpack"
   }
 }
