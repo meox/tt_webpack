@@ -19,7 +19,8 @@ yarn
 #update it (optional)
 yarn upgrade
 ```
-Under the **src** directory put all your *Plugins*, you should have something like this:  
+Under the **src** directory put all your *Plugins*, you should have something like this:
+  
 ![image-folder](https://cloud.githubusercontent.com/assets/852548/25313524/50709ac2-2830-11e7-954c-1fde475afc13.png)
 
 Under the *src* directory you can put other directories (like common) and other js libraries or file that contains you code.
