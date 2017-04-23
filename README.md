@@ -1,5 +1,5 @@
-# tt_webpack
-example how to use webpack for TT
+# TrueTicket WebPack configuration
+Example how to use webpack for TT
 
 ## Install YARN (package manager) for Debian
 
@@ -31,12 +31,44 @@ Consider the *hello_world.js* plugin. At the beginning it look likes:
 import * as common_voice from './common/voice'
 ```
 
-As you can see it include (using **import** directive from ES2015) the module *voice* that is located under *common* folder.
-If you open common/voice.js:
+As you can see it imports (using **import** directive from ES2015) the module *voice* that is located under *common* folder.
+If you open common/voice.js file you can see at the beginning smthg like this:
 ```javascript
 export function loadEnumeResolver(obj, tkt)
 {
 ...
 }
 ```
-The important part is that every function that you would like to export should be preceded by **export** keyword.
+The important part is that every function that you want export should be preceded by **export** keyword.
+
+## WebPack Config (webpack.config.js)
+
+In order to generate a bundle for a certain plugin you have to add an entry inside *webpack.config.js* file:
+```javascript
+var path = require('path');
+var webpack = require('webpack');
+
+module.exports = {
+  entry: {
+    hello_world: './src/hello_world.js',
+    ucq03: './src/ucq03.js'
+  },
+  output: {
+    path: __dirname + '/dist',
+    filename: '[name]_bundle.js',
+    library: 'tt'
+  },
+  module: {
+    ...
+  }
+}; 
+```
+Under *entry* section you can add a new plugin simply put the name and the location of the main file. After that we can compile yours bundle.
+
+## Compiling
+From the command line, in the main folder do this:
+```bash
+yarn build
+```
+
+This will generates under *dist* folder the bundle version for every plugin configured in *webpack.config.js*.
