@@ -1,4 +1,5 @@
-function loadEnumeResolver(obj, tkt)
+
+export function loadEnumeResolver(obj, tkt)
 {
     if (obj === null) {
         obj = {};
@@ -15,4 +16,5 @@ function loadEnumeResolver(obj, tkt)
             Drop: tkt.TerminationType.get_enum_value("Drop")
         };
     }
+    return obj;
 }
