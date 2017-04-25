@@ -147,21 +147,21 @@ export function WorkOnTicket(tkt_type, tkt_ver, tkt, sec, nsec, last_sec, last_n
 	//                MOCall:0 MTCall:1 MOSms:2 MTSms:3 LUNorm:4 IMSIAtt:5 LUPer:6 IMSIDet:7 HOIn:8 EmergencyCall:9 SSvc:10 PerformLocationReq:11 Unk:12 PagingResponse:13 MOVideoCall:14 MTVideoCall:15 Data:16 Fax:17 Other_ITC:18 HO2GIn:19
 
 
-	var is_mo_call		= (activation_type == 0);
-	var is_mt_call		= (activation_type == 1);
+	var is_mo_call		= (activation_type === 0);
+	var is_mt_call		= (activation_type === 1);
 
 	var is_ho = false;
 
-	if (tkt_type == TT_A)
-		is_ho = (activation_type == 8 || activation_type == 14);
+	if (tkt_type === TT_A)
+		is_ho = (activation_type === 8 || activation_type === 14);
 	else
-		is_ho = (activation_type == 8 || activation_type == 19);
+		is_ho = (activation_type === 8 || activation_type === 19);
 
 
-	var is_normcallterm		= (clear_type == 3);
-	var is_radio_present	= (assignment_status == 1);
-	var is_voice_drop		= (clear_type >= 0 && clear_type < 3) && (conn_snapshot == 0 || conn_snapshot == 1) && (is_mo_call || is_mt_call || is_ho);
-	var is_user_busy		= (cause_cc == 17 && connection_msec == 0);
+	var is_normcallterm		= (clear_type === 3);
+	var is_radio_present	= (assignment_status === 1);
+	var is_voice_drop		= (clear_type >= 0 && clear_type < 3) && (conn_snapshot === 0 || conn_snapshot === 1) && (is_mo_call || is_mt_call || is_ho);
+	var is_user_busy		= (cause_cc === 17 && connection_msec === 0);
 	var is_valid			= (is_mo_call || is_mt_call) && is_normcallterm && is_radio_present && connection_msec > 0 && termination_msec > 0;
 
 	callnumber 				= clear_callnumber(callnumber);

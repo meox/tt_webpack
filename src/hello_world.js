@@ -1,8 +1,7 @@
 /*UcHelloWorld*/
 //./bin/TrueTicket runplugin Plugins/V8Worker 12000 /mnt/disk-master/slabroot/omni-slabroot 1510060000-1510062300 script=/home/meox/TrueTicket/INSTALL/DATADIR/JS/bundle.js inpath=V8Worker/in/ outpath=V8Worker/out
 
-import * as common_voice from './common/voice'
-
+import * as common_voice from './common/voice';
 
 "use strict";
 
@@ -94,9 +93,9 @@ export function WorkOnTicket(tkt_type, tkt_ver, tkt, sec, nsec, last_sec, last_n
 
     var is_mo_call = (activation_type === EnumResolver.ActivationType.MOCall), // (activation_type == 0),
         is_mt_call = (activation_type === EnumResolver.ActivationType.MTCall), // (activation_type == 1),
-        is_ho = (activation_type == EnumResolver.ActivationType.HOIn || activation_type == EnumResolver.ActivationType.HO3GIn || activation_type == EnumResolver.ActivationType.HO4GIn),
-        is_drop = (termination_type == EnumResolver.TerminationType.Drop),
-        is_voice_drop = (clear_type >= 0 && clear_type < 3) && (conn_snapshot == 0 || conn_snapshot == 1) && (is_mo_call || is_mt_call || is_ho);
+        is_ho = (activation_type === EnumResolver.ActivationType.HOIn || activation_type === EnumResolver.ActivationType.HO3GIn || activation_type === EnumResolver.ActivationType.HO4GIn),
+        is_drop = (termination_type === EnumResolver.TerminationType.Drop),
+        is_voice_drop = (clear_type >= 0 && clear_type < 3) && (conn_snapshot === 0 || conn_snapshot === 1) && (is_mo_call || is_mt_call || is_ho);
 
     var index = [lac.value, ci.value];
 

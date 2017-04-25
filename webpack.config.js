@@ -20,7 +20,14 @@ module.exports = {
         query: {
           presets: ['es2015']
         }
+      },
+      {
+          exclude: /node_modules/,
+          loader: "eslint-loader",
+          options: {
+              failOnError: true,
+          }
       }
     ]
   }
-}; 
+};
