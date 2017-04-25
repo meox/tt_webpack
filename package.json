@@ -25,16 +25,15 @@
   "scripts": {
     "build": "webpack"
   },
-  "eslintConfig" : {
+  "eslintConfig": {
     "parserOptions": {
-        "ecmaVersion": 6,
-        "sourceType": "module",
-        "ecmaFeatures": {
-        }
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {}
     },
     "rules": {
-        "eqeqeq": "warn",
-        "semi": "error"
+      "eqeqeq": "warn",
+      "semi": "error"
     }
   }
 }
